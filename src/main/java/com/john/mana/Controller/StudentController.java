@@ -31,4 +31,9 @@ public class StudentController {
     public List<Student> ListStudent(){
         return studentRepository.findAll();
     }
+
+    @PutMapping("/update")
+    public Student UpdateStudent(@RequestBody Student student) {
+        return studentRepository.save(student);
+    }
 }
