@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
-@RequestMapping("/medicos")
+@RequestMapping("/profesores")
 public class TeacherController {
 
 
@@ -27,7 +27,6 @@ public class TeacherController {
     public void DeleteTeacher(@PathVariable String id){
         teacherRepository.deleteById(id);
     }
-
 
     @GetMapping("/list")
     public List<Teacher> ListTeacher(){
